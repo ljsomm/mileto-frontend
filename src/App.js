@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DefaultLayout from './components/DefaultLayout';
+import routes from './routes'
+import Private from './routes/Private';
+import Public from './routes/Public';
+import './styles/global.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  return(
+    
+      <BrowserRouter>
+        <DefaultLayout>
+          <Routes>
+            {
+              routes.map( (item, key) =>{  return <Route key={key} path={item.path} element={item.private ? <Private component={<item.component title={item.title}/>}/> : (item.public ? <Public component={<item.component title={item.title}/>}/> : <item.component title={item.title}/> ) } />} )
+            }
+          </Routes>
+        </DefaultLayout>  
+      </BrowserRouter>
+      
   );
 }
 

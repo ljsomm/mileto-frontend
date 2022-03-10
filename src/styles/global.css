@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../assets/fonts/CenturyGothic.ttf');
+}
+
+* { margin: 0;  font-family: 'Century Gothic'; }
+
+:root{
+    --azul-escuro: #3A455E;
+}

@@ -1,0 +1,23 @@
+.default-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.default-main{
+    flex: 1;
+    padding: 10px;
+}
+
+.home-main{
+    flex: 1;
+}
+
+.sign-main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F1F1;
+}

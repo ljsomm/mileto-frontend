@@ -1,0 +1,36 @@
+footer{
+    background: #374A4F;
+    color: white;
+    padding: 60px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+footer *{
+    opacity: 75%;
+    transition: 0.25s;
+}
+
+footer li, footer img{
+    cursor: pointer;
+}
+
+footer li:hover, footer img:hover{
+    opacity: 100%;
+}
+
+footer ol{
+    list-style: none;
+    
+}
+
+footer ol li{
+    padding: 5px;
+}
+
+footer img{
+    height: 75px;
+    width: 100px;
+}
