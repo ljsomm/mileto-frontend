@@ -1,6 +1,5 @@
 footer{
     background: #374A4F;
-    color: white;
     padding: 60px 30px;
     display: flex;
     justify-content: space-between;
@@ -9,16 +8,23 @@ footer{
 }
 
 footer *{
-    opacity: 75%;
     transition: 0.25s;
+}
+
+footer small{
+    color: white;
+}
+
+footer li{
+    color: rgba(255, 255, 255, 0.75);
 }
 
 footer li, footer img{
     cursor: pointer;
 }
 
-footer li:hover, footer img:hover{
-    opacity: 100%;
+footer li:hover{
+    color: rgb(255, 255, 255);
 }
 
 footer ol{
