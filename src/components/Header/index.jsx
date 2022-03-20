@@ -53,7 +53,7 @@ const Header = () => {
             :
             <div className={`${pathname === '/' ? "home" : "default"}-header-buttons`}>
                 <button className="header-button" onClick={()=>{navigate('login')}}>Log in</button>
-                <button className="header-button" onClick={()=>{sessionStorage.setItem('isLogged', true);}}>Cadastro</button>
+                <button className="header-button" onClick={()=>{navigate('cadastro')}}>Cadastro</button>
             </div>
            }
             

@@ -1,10 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import Steps from "../../components/Steps";
+import User from "../../services/User";
+import ModalContext from '../../contexts/ModalContext';
 
 import './styles.css'
 
 const SignUp = ({ title }) => {
+
+    const { dispatch } = useContext(ModalContext);
 
     const navigate = useNavigate();
 
@@ -14,7 +19,7 @@ const SignUp = ({ title }) => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmationRef = useRef();
-    const genderRef = useRef();
+    const abbreviationRef = useRef();
     const customRef = useRef();
     const treatmentRef = useRef();
 
@@ -29,9 +34,10 @@ const SignUp = ({ title }) => {
             email: '',
             password: '',
             passwordConfirmation: '',
-            gender: '',
-            custom: '',
-            treatment: ''
+            abbreviation: '',
+            customName: '',
+            treatment: '',
+            'user-photo': ''
         }
     );
 
@@ -49,13 +55,30 @@ const SignUp = ({ title }) => {
             </div>
             <div className='sign-side'>
                 <h2>Cadastro</h2>
-                <form className="form" action="/principal" method="get" onSubmit={(e)=>{
+                <form className="form" action="/principal" method="get" onSubmit={async (e)=>{
                     e.preventDefault();
                     switch(step){
                         case 1:
                             if(user.name !== '' && user.lastname !== '' && user.birthDate !== ''){
-                                setStep(step + 1);
-                                setError(null);
+                                const birthDate = user.birthDate.split("-");
+                                const actualDate = new Date();
+                                let age = actualDate.getFullYear() - parseInt(birthDate[0]);
+                                if(parseInt(birthDate[1]) > actualDate.getMonth() + 1 || (parseInt(birthDate[1]) === actualDate.getMonth() + 1 && parseInt(birthDate[2]) > actualDate.getDate())){
+                                    age--; 
+                                } 
+                                if(age < 14){
+                                    birthDateRef.current.style = "border-bottom-color: red;";
+                                    setError("Idade mínima: 14 anos!");
+                                }
+                                else if(age > 120){
+                                    birthDateRef.current.style = "border-bottom-color: red;";
+                                    setError("Insira uma Data de Nascimento válida!");
+                                }
+                                else{
+                                    setUser({ ...user, name: `${user.name} ${user.lastname}` });
+                                    setStep(step + 1);
+                                    setError(null);
+                                }
                             } 
                             else{
                                 user.name === '' ? nameRef.current.style = "border-bottom-color: red; color: red;" : nameRef.current.style = null;
@@ -66,9 +89,22 @@ const SignUp = ({ title }) => {
                             break;
                         case 2:
                             if(user.email !== '' && user.password !== '' && user.passwordConfirmation !== ''){
-                                setStep(step + 1);
-                                setError(null);
-                                setSignUpButton("Cadastrar");
+                                if(user.email.includes("@")){
+                                    if(user.password === user.passwordConfirmation){
+                                        setStep(step + 1);
+                                        setError(null);
+                                        setSignUpButton("Cadastrar");
+                                    }
+                                    else{
+                                        passwordRef.current.style = "border-bottom-color: red;";
+                                        passwordConfirmationRef.current.style = "border-bottom-color: red;";
+                                        setError("As senhas não correspondem!");
+                                    }
+                                }
+                                else{
+                                    emailRef.current.style = "border-bottom-color: red;";
+                                    setError("Digite um endereço de e-mail válido!");
+                                }
                             } 
                             else{
                                 user.email === '' ? emailRef.current.style = "border-bottom-color: red" :  emailRef.current.style = null;
@@ -78,12 +114,18 @@ const SignUp = ({ title }) => {
                             }
                             break;
                         case 3:
-                            if(user.gender !== ""){
-                                genderRef.current.style = null;
+                            if(user.abbreviation !== ""){
+                                abbreviationRef.current.style = null;
                                 setError(null);
-                                if(user.gender === "O"){
+                                if(user.abbreviation === "O"){
                                     if(user.treatment !== "" && user.custom !== ""){
-                                        navigate("/principal");
+                                        const cadastro = await User.cadastro(user);
+                                        if(cadastro && !cadastro.err){
+                                            navigate("/login", { state: { signup: true } });
+                                        }
+                                        else{
+                                            dispatch({ type: "OPEN", modal: { header: <h1>Erro</h1>, body: <h3>Erro ao cadastrar!</h3>, footer: <button onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
+                                        } 
                                     }
                                     else{
                                         customRef.current.style = user.custom === '' ? "border-bottom-color: red" : null;  
@@ -92,11 +134,17 @@ const SignUp = ({ title }) => {
                                     }
                                 }
                                 else{
-                                    navigate("/principal");
+                                    const cadastro = await User.cadastro(user);
+                                    if(cadastro && !cadastro.err){
+                                        navigate("/login", { state: { signup: true } });
+                                    }
+                                    else{
+                                        dispatch({ type: "OPEN", modal: { header: <h1>Erro</h1>, body: <h3>Erro ao cadastrar!</h3>, footer: <button onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
+                                    } 
                                 }
                             }
                             else{
-                                genderRef.current.style = "border-bottom-color: red";
+                                abbreviationRef.current.style = "border-bottom-color: red";
                                 setError("Preencha ao campo gênero corretamente!");
                             }
                             break;
@@ -127,7 +175,7 @@ const SignUp = ({ title }) => {
                                             }    
                                             setUser({...user, lastname: e.target.value})
                                         }} />
-                                        <input type="date" ref={birthDateRef} value={user.birthDate} onChange={ e => {
+                                        <input type="text" placeholder="Data de Nascimento" ref={birthDateRef} value={user.birthDate} onFocus={e=>e.target.type = "date"} onChange={ e => {
                                             if(e.target.value === ''){
                                                 e.target.style = "border-bottom-color: red; color: red;";
                                             }
@@ -163,8 +211,8 @@ const SignUp = ({ title }) => {
                             case 3:
                                 return(
                                     <>
-                                        <select ref={genderRef} name="sel-genero" id="sel-genero" value={user.gender} onChange={e=>{
-                                            setUser({...user, gender: e.target.value});
+                                        <select ref={abbreviationRef} name="sel-genero" id="sel-genero" value={user.abbreviation} onChange={e=>{
+                                            setUser({...user, abbreviation: e.target.value});
                                         }}>
                                             <option value="" defaultChecked disabled>Gênero</option>    
                                             <option value="M">Masculino</option>    
@@ -174,12 +222,12 @@ const SignUp = ({ title }) => {
                                         </select>
                                         {
                                             (()=>{
-                                                if(user.gender === "O"){
+                                                if(user.abbreviation === "O"){
                                                     return(
                                                         <>
                                                             <input  ref={customRef} type="text" placeholder="Insira seu gênero" name="inp-custom" id="inp-custom" value={user.custom} onChange={e=>{
                                                                 e.target.style = e.target.value === '' ?  "border-bottom-color: red" : null;
-                                                                setUser({...user, custom: e.target.value})
+                                                                setUser({...user, customName: e.target.value})
                                                             }} />
                                                             <select ref={treatmentRef} name="sel-treatment" id="sel-treatment" value={user.treatment} onChange={e=>{
                                                                 e.target.style = e.target.value === '' ?  "border-bottom-color: red" : null;

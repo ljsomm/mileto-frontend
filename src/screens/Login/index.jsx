@@ -1,15 +1,32 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
 import Switch from '../../components/Switch';
+import ModalContext from '../../contexts/ModalContext';
+import successIcon from '../../assets/icons/confirmation.png'
 import './styles.css';
 
 const Login = ({title}) => {
+
     const [ state, setState ] = useState("A");
     const navigate = useNavigate();
-
+    const location  = useLocation();
+    const { dispatch } = useContext(ModalContext);
     useEffect(() => {
         document.title = `Mileto - ${title}`;
-    }, [title]);
+        if(location.state && location.state.signup){
+            dispatch({
+                type: "OPEN", 
+                modal: { 
+                    kind: "ALERT", 
+                    header: <h1>Sucesso</h1>, 
+                    body: <><img src={successIcon} className="modal-icon" alt="Confirmação"/><p>Cadastro efetuado com sucesso</p></> , 
+                    footer: <button onClick={()=>dispatch({type: "CLOSE"})} className="modal-button">Okay</button>
+                }
+            });
+        }
+    }, [title, location.state, dispatch]);
+
 
     return(
         <div className='sign'>
