@@ -2,6 +2,7 @@ import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Main from "../screens/Main";
 import SignUp from "../screens/SignUp";
+import Terms from "../screens/UserTerms";
 
 const routes = [
     {
@@ -29,6 +30,13 @@ const routes = [
         title: 'Cadastro',
         public: true,
         hideHeader: true
+    },
+
+    {
+        path: '/userterms',
+        component: Terms,
+        title: 'UserTerms',
+        public: true
     }
 ];
 
