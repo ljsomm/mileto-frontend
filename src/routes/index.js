@@ -35,8 +35,7 @@ const routes = [
     {
         path: '/userterms',
         component: Terms,
-        title: 'UserTerms',
-        public: true
+        title: 'UserTerms'
     }
 ];
 
