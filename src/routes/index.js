@@ -2,6 +2,7 @@ import Dashboard from "../screens/Dashboard";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Main from "../screens/Main";
+import NotFound from "../screens/NotFound";
 import SignUp from "../screens/SignUp";
 import Terms from "../screens/UserTerms";
 
@@ -42,6 +43,11 @@ const routes = [
         component: Dashboard,
         title: 'Dashboard',
         private: true
+    },
+    {
+        path: '*',
+        component: NotFound,
+        title: 'Página não encontrada'
     }
 ];
 
