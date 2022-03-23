@@ -4,10 +4,12 @@ import LogoHome from '../../assets/images/logo-branca.png';
 import LogoDefault from '../../assets/images/logo-azul-escuro.png';
 import './styles.css';
 import { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const [ cookies, setCookie, removeCookie ] = useCookies();
     const { pathname } = useLocation();
     const [ bgColor, setBgColor ] = useState(0);
     useEffect(() => {
@@ -46,8 +48,8 @@ const Header = () => {
             })()
            }  
            {
-               sessionStorage.getItem("isLogged")?
-               <div onClick={()=>{sessionStorage.removeItem('isLogged');}}>
+               cookies.__token?
+               <div onClick={()=>{removeCookie('__token');}}>
                    Sair 
                </div>
             :

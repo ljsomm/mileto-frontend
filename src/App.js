@@ -1,3 +1,4 @@
+import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DefaultLayout from './components/DefaultLayout';
 import { ModalProvider } from './contexts/ModalContext';
@@ -10,15 +11,17 @@ const App = () => {
   return(
     
       <BrowserRouter>
-        <ModalProvider>
-          <DefaultLayout>
-            <Routes>
-              {
-                routes.map( (item, key) =>{  return <Route key={key} path={item.path} element={item.private ? <Private component={<item.component title={item.title}/>}/> : (item.public ? <Public component={<item.component title={item.title}/>}/> : <item.component title={item.title}/> ) } />} )
-              }
-            </Routes>
-          </DefaultLayout>  
-        </ModalProvider>
+        <CookiesProvider>
+          <ModalProvider>
+            <DefaultLayout>
+              <Routes>
+                {
+                  routes.map( (item, key) =>{  return <Route key={key} path={item.path} element={item.private ? <Private component={<item.component title={item.title}/>}/> : (item.public ? <Public component={<item.component title={item.title}/>}/> : <item.component title={item.title}/> ) } />} )
+                }
+              </Routes>
+            </DefaultLayout>  
+          </ModalProvider>
+        </CookiesProvider>
       </BrowserRouter>
       
   );
