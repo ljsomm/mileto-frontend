@@ -1,3 +1,4 @@
+import Dashboard from "../screens/Dashboard";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Main from "../screens/Main";
@@ -29,6 +30,12 @@ const routes = [
         title: 'Cadastro',
         public: true,
         hideHeader: true
+    },
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        title: 'Dashboard',
+        private: true
     }
 ];
 
