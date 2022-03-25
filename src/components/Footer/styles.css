@@ -15,7 +15,18 @@ footer *{
 
 footer li, footer img{
     cursor: pointer;
-    color: white;
+}
+
+footer li, footer small{
+    color: rgba(255, 255, 255, 0.651);
+}
+
+footer li, footer small{
+    color: rgba(255, 255, 255, 0.651);
+}
+
+footer li:hover{
+    color: rgb(255, 255, 255);
 }
 
 footer li:hover, footer img:hover{
@@ -24,7 +35,6 @@ footer li:hover, footer img:hover{
 
 footer ol{
     list-style: none;
-    
 }
 
 footer ol li{
