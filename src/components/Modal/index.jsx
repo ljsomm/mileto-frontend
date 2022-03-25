@@ -12,14 +12,16 @@ const Modal = () => {
                 <div className={classNames(
                     {
                         "modal-body": true,
-                        "modal-body__alert": state.kind && state.kind === "ALERT"
+                        "modal-body__alert": state.kind && state.kind === "ALERT",
+                        "modal-body__form": state.kind && state.kind === "FORM"
                     }
                 )}>{ state.body }</div>
                 <div className={
                     classNames(
                         {
                             "modal-footer": true,
-                            "modal-footer__alert": state.kind && state.kind === "ALERT"
+                            "modal-footer__alert": state.kind && state.kind === "ALERT",
+                            "modal-footer__form": state.kind && state.kind === "FORM"
                         }
                     )
                 }>{ state.footer }</div>

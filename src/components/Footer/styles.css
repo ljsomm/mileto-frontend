@@ -10,7 +10,6 @@ footer{
 }
 
 footer *{
-    opacity: 75%;
     transition: 0.25s;
 }
 

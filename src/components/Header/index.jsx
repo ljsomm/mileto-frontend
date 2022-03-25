@@ -22,7 +22,9 @@ const Header = () => {
     return(
         <header style={(()=>{if(pathname==='/'){return{backgroundColor: `rgba(55, 74, 79, ${parseFloat(bgColor)/350})`}}else if(pathname==='/login' || pathname==='/cadastro'){return { display: 'none' }}})()} className={pathname === '/' ? "home-header" : "default-header"}>
             <div className="header-put">
-                <img src={pathname === '/'? LogoHome : LogoDefault} alt="logo" className="header-logo"/>
+                <Link to ='/'>
+                    <img src={pathname === '/'? LogoHome : LogoDefault} alt="logo" className="header-logo"/>
+                </Link>
             </div>
            { 
             (()=>{
