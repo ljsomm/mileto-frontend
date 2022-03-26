@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useCookies } from 'react-cookie';
+import { useEffect, useState } from 'react';
+import RatingStars from '../../components/RatingStars';
 
 const Main = ({ title }) => {
 
@@ -7,11 +7,11 @@ const Main = ({ title }) => {
         document.title = `Mileto - ${title}`;
     }, [title]);
 
-    const [cookies] = useCookies();
-
+    const [state, setState] = useState(0);
     return(
         <h1>
-            Main works!
+            Main works! - {state}
+            <RatingStars state={state} setState={setState}/>
         </h1>
     );
 }
