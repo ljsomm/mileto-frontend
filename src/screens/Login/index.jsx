@@ -37,9 +37,9 @@ const Login = ({title}) => {
                 type: "OPEN", 
                 modal: { 
                     kind: "ALERT", 
-                    header: <h1>Sucesso</h1>, 
-                    body: <><img src={successIcon} className="modal-icon" alt="Confirmação"/><p>Cadastro efetuado com sucesso</p></> , 
-                    footer: <button onClick={()=>dispatch({type: "CLOSE"})} className="modal-button">Okay</button>
+                    Header: () => <h1>Sucesso</h1>, 
+                    Body: () => <><img src={successIcon} className="modal-icon" alt="Confirmação"/><p>Cadastro efetuado com sucesso</p></> , 
+                    Footer: () => <button onClick={()=>dispatch({type: "CLOSE"})} className="modal-button">Okay</button>
                 }
             });
         }

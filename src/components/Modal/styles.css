@@ -84,7 +84,21 @@
     padding: 10px;
     text-align: center;
     width: 250px;
+}
 
+.modal-body label{
+    margin: 10px 0px
+}
+
+.modal-body__form button{
+    background-color: #4e686e;
+    color: white;
+    padding: 7.5px 15px;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
 }
 
 .modal-button{

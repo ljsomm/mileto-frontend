@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import RatingStars from '../../components/RatingStars';
+import { useEffect } from 'react';
 
 const Main = ({ title }) => {
 
@@ -7,11 +6,9 @@ const Main = ({ title }) => {
         document.title = `Mileto - ${title}`;
     }, [title]);
 
-    const [state, setState] = useState(0);
     return(
         <h1>
-            Main works! - {state}
-            <RatingStars state={state} setState={setState}/>
+            Main works!
         </h1>
     );
 }

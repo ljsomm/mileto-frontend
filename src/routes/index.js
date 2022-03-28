@@ -36,7 +36,7 @@ const routes = [
     {
         path: '/userterms',
         component: Terms,
-        title: 'UserTerms'
+        title: 'Termos de Uso'
     },
     {
         path: '/dashboard',

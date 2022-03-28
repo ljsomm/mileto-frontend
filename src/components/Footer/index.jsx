@@ -2,12 +2,14 @@ import './styles.css';
 import Logo from '../../assets/images/logo-branca.png'
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import ModalContext from '../../contexts/ModalContext';
+import RatingStars from '../RatingStars';
 
 const Footer = () => {
     const { dispatch } = useContext(ModalContext);
     const { pathname } = useLocation();
+
     return(
         <footer style={function(){if(pathname === '/cadastro' || pathname === '/login'){ return { display: 'none' }; }}()}>
             <ol>
@@ -18,14 +20,19 @@ const Footer = () => {
                     modal: {
                         kind: "FORM",
                         closeButton: true,
-                        header: <h1>Avalie a plataforma</h1>,
-                        body: 
-                            <form onSubmit={e=>e.preventDefault()}>
-                                <input type="text" />
-                                <input type="text" />
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                            </form>,
-                        footer: <button>Enviar</button>,
+                        Header: () => <h1>Avalie a plataforma</h1>,
+                        Body: () =>{
+                            const [rating, setRating] = useState({ stars: 0, coment: '' });
+                            return(
+                            <form  onSubmit={e=>{e.preventDefault(); alert(`Estrelas: ${rating.stars} || Comentário: ${rating.coment}`)}}>
+                                <label>Avaliação</label>
+                                <RatingStars state={rating} setState={setRating}/>
+                                <label>Comentário</label>
+                                <textarea value={rating.coment} onChange={e=>setRating({...rating, coment: e.target.value })} name="inp-coment" id="inp-coment" cols="30" rows="10"></textarea>
+                                <button>Enviar</button>
+                            </form>
+                            );
+                        },
                     }
                 })}>Avaliar Plataforma</li>
             </ol>
