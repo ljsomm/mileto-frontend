@@ -124,7 +124,7 @@ const SignUp = ({ title }) => {
                                             navigate("/login", { state: { signup: true } });
                                         }
                                         else{
-                                            dispatch({ type: "OPEN", modal: { Header: () => <h1>Erro</h1>, Body: () => <h3>Erro ao cadastrar!</h3>, Footer: () => <button onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
+                                            dispatch({ type: "OPEN", modal: { Header: () => <h1>Erro</h1>, Body: () => <h3>Erro ao cadastrar!</h3>, Footer: () => <button className="modal-button" onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
                                         } 
                                     }
                                     else{
@@ -139,7 +139,7 @@ const SignUp = ({ title }) => {
                                         navigate("/login", { state: { signup: true } });
                                     }
                                     else{
-                                        dispatch({ type: "OPEN", modal: { Header: () => <h1>Erro</h1>, Body: () => <h3>Erro ao cadastrar!</h3>, Footer: () => <button onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
+                                        dispatch({ type: "OPEN", modal: { Header: () => <h1>Erro</h1>, Body: () => <h3>Erro ao cadastrar!</h3>, Footer: () => <button className="modal-button" onClick={()=>dispatch({type: "CLOSE"})}>Tentar novamente</button> } });
                                     } 
                                 }
                             }
