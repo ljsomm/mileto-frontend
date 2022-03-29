@@ -18,6 +18,27 @@ const User = {
         catch(exception){
             return { err: exception.response.data.err }
         }
+    },
+    get: async (token, setState, dispatch) => {
+        if(dispatch){
+            try{
+                const response = await api.get('/user', { headers: { token } });
+                setState({ type: "GET_USER", payload: response.data });
+            }
+            catch(err){
+                throw err;
+            }
+        }
+        else{
+            try{
+                const response = await api.get('/user', { headers: { token } });
+                setState(response.data);
+            }
+            catch(err){
+                throw Error("Ocorreu um erro");
+            }
+        }
+        
     }
 }
 

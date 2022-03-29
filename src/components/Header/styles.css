@@ -81,3 +81,78 @@ header a:focus {
     width: 80px;
     cursor: pointer;
 }
+
+.user-icon{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.header-user-section{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: 0.25s;
+}
+
+.header-user-section:hover{
+    background-color: #ebebeb;
+}
+
+.header-user-section__hover:hover{
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+.end-header{
+    max-width: 250px;
+    position: relative;
+}
+
+.header-user-section__active{
+    background-color: #dddddd;
+
+}
+
+.header-dropdown-menu{
+    opacity: 0;
+    position: absolute;
+    background-color: #dddddd;  
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.header-dropdown-menu ol{
+    list-style: none;
+    padding: 0;
+}
+
+.header-dropdown-menu ol li{
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.25s;
+}
+
+.header-dropdown-menu ol li:hover{
+    background-color: #ebebeb;
+}
+
+.header-dropdown-menu ol li:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.header-dropdown-menu ol li:last-child:hover{
+    background-color: rgb(194, 86, 86);
+    color: white;
+}
+
+.header-dropdown-menu__active{
+    opacity: 100%;
+}
