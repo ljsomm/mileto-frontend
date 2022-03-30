@@ -24,7 +24,6 @@ const Header = () => {
                 await User.get(cookies.__token, dispatch , true);
             }
             catch(err){
-                alert("DEU PAU");
                 if(err.response.status === 401){
                     removeCookie('__token');
                     dispatch({ type: "REMOVE_USER" });

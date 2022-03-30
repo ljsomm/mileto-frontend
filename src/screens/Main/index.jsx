@@ -9,12 +9,9 @@ const Main = ({ title }) => {
     }, [title, dispatch]);
 
     return(
-        <>
-            <h1>
-                { state.name && `Bem vindo, ${state.name}!` }
-            </h1>
-
-        </>
+        <h1>
+            { state.name && `Bem vindo, ${state.name}!` }
+        </h1>
     );
 }
 
