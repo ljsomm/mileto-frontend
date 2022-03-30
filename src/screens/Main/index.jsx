@@ -1,5 +1,4 @@
 import { useContext, useEffect } from 'react';
-import Loading from '../../components/Loading';
 import UserContext from '../../contexts/UserContext';
 
 const Main = ({ title }) => {
@@ -14,7 +13,7 @@ const Main = ({ title }) => {
             <h1>
                 { state.name && `Bem vindo, ${state.name}!` }
             </h1>
-            <Loading/>
+
         </>
     );
 }
