@@ -8,3 +8,11 @@
 :root{
     --azul-escuro: #3A455E;
 }
+
+.mirror{
+    transform: rotate(180deg);
+}
+
+img{
+    user-select: none;
+}

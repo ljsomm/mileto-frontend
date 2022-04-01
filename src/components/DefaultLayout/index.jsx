@@ -8,7 +8,6 @@ const DefaultLayout = ({ children }) => {
     const { pathname } = useLocation();
     return(
         <div className="default-layout">
-            <Modal/>
             {
                 pathname === '/login' || pathname === '/cadastro' ?
                 <main className="sign-main">
@@ -24,6 +23,7 @@ const DefaultLayout = ({ children }) => {
                     <Footer/>
                 </>
             }
+            <Modal/>
             
         </div>
     );

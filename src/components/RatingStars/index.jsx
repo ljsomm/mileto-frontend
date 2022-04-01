@@ -5,11 +5,11 @@ import offStar from '../../assets/icons/off-star.png';
 const RatingStars = ({ state, setState }) => {
     return(
         <div className={styles["rating-background"]}>
-           <img src={state.stars >= 1 ? onStar : offStar} alt="estrela" onClick={()=>setState({...state, stars: 1 })} /> 
-           <img src={state.stars >= 2 ? onStar : offStar} alt="estrela" onClick={()=>setState({...state, stars: 2 })} /> 
-           <img src={state.stars >= 3 ? onStar : offStar} alt="estrela" onClick={()=>setState({...state, stars: 3 })} /> 
-           <img src={state.stars >= 4 ? onStar : offStar} alt="estrela" onClick={()=>setState({...state, stars: 4 })} /> 
-           <img src={state.stars >= 5 ? onStar : offStar} alt="estrela" onClick={()=>setState({...state, stars: 5 })} /> 
+           <img src={state.stars >= 1 ? onStar : offStar} alt="estrela" onClick={()=>state.stars === 1 ? setState({...state, stars: 0 }) : setState({...state, stars: 1 })} /> 
+           <img src={state.stars >= 2 ? onStar : offStar} alt="estrela" onClick={()=>state.stars === 2 ? setState({...state, stars: 0 }) : setState({...state, stars: 2 })} /> 
+           <img src={state.stars >= 3 ? onStar : offStar} alt="estrela" onClick={()=>state.stars === 3 ? setState({...state, stars: 0 }) : setState({...state, stars: 3 })} /> 
+           <img src={state.stars >= 4 ? onStar : offStar} alt="estrela" onClick={()=>state.stars === 4 ? setState({...state, stars: 0 }) : setState({...state, stars: 4 })} /> 
+           <img src={state.stars >= 5 ? onStar : offStar} alt="estrela" onClick={()=>state.stars === 5 ? setState({...state, stars: 0 }) : setState({...state, stars: 5 })} /> 
         </div>
     );
 }

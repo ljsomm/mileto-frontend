@@ -1,5 +1,6 @@
 .card-container{
     border: 1px solid #707070;
+    min-width: 300px;
     width: 300px;
     height: 225px;
     cursor: pointer;
@@ -11,7 +12,6 @@
 .card-container:hover{
     box-shadow: 2px 2px 10px #70707071;
 }
-
 
 .card-info-section{
     border-top: 1px solid #707070;
