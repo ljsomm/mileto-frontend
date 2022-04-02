@@ -80,7 +80,7 @@ const Login = ({title}) => {
             </div>
             <div className='sign-side'>
                 <div>
-                    <h2>Login</h2>
+                    <h2 className='sign-title'>Login</h2>
                     <form className="form" onSubmit={handleLoginSubmit}>
                         <input type="text" ref={emailRef} placeholder="E-mail" name="inp-email" value={user.email} onChange={e=>{
                             emailRef.current.style = e.target.value.length ? null :  "border-bottom-color: red;";
