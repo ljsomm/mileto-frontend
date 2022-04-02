@@ -54,7 +54,7 @@ const SignUp = ({ title }) => {
                 </button>
             </div>
             <div className='sign-side'>
-                <h2>Cadastro</h2>
+                <h2 className="sign-title">Cadastro</h2>
                 <form className="form" action="/principal" method="get" onSubmit={async (e)=>{
                     e.preventDefault();
                     switch(step){
