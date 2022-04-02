@@ -5,6 +5,10 @@
     height: 100vh;
 }
 
+.mileto-main{
+    flex: 1;
+}
+
 .default-main{
     flex: 1;
     padding: 10px;

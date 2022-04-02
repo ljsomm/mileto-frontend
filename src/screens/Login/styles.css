@@ -7,6 +7,7 @@
 
 h2{
     font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .sign-side:nth-child(1){
@@ -48,6 +49,10 @@ h2{
     width: 65%;
     height: 100%;
     padding: 60px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form{

@@ -9,7 +9,7 @@ const Main = ({ title }) => {
     const[courses, setCourses] = useState([]);
 
     async function getCourses(){
-        const response = await Course.get();
+        const response = await Course.getAll();
         setCourses(response.data);
     }
 

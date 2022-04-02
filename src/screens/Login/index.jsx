@@ -79,20 +79,22 @@ const Login = ({title}) => {
                 </button>
             </div>
             <div className='sign-side'>
-                <h2>Login</h2>
-                <form className="form" onSubmit={handleLoginSubmit}>
-                    <input type="text" ref={emailRef} placeholder="E-mail" name="inp-email" value={user.email} onChange={e=>{
-                        emailRef.current.style = e.target.value.length ? null :  "border-bottom-color: red;";
-                        setUser({ ...user, email: e.target.value }
-                    )}} id="inp-email" />
-                    <input type="password" ref={passwordRef}  placeholder="Senha" name="inp-senha" value={user.password} onChange={e=>{
-                        passwordRef.current.style = e.target.value.length ?  null :  "border-bottom-color: red;";
-                        setUser({ ...user, password: e.target.value  })
-                    }} id="inp-senha" />
-                    <Switch name="login" state={state} items={[{id: "A", label: "Aluno"}, {id: "P", label: "Professor"}]} setState={setState}/>
-                    <span className="error">{error}</span>
-                    <button>Entrar</button>
-                </form>
+                <div>
+                    <h2>Login</h2>
+                    <form className="form" onSubmit={handleLoginSubmit}>
+                        <input type="text" ref={emailRef} placeholder="E-mail" name="inp-email" value={user.email} onChange={e=>{
+                            emailRef.current.style = e.target.value.length ? null :  "border-bottom-color: red;";
+                            setUser({ ...user, email: e.target.value }
+                        )}} id="inp-email" />
+                        <input type="password" ref={passwordRef}  placeholder="Senha" name="inp-senha" value={user.password} onChange={e=>{
+                            passwordRef.current.style = e.target.value.length ?  null :  "border-bottom-color: red;";
+                            setUser({ ...user, password: e.target.value  })
+                        }} id="inp-senha" />
+                        <Switch name="login" state={state} items={[{id: "A", label: "Aluno"}, {id: "P", label: "Professor"}]} setState={setState}/>
+                        <span className="error">{error}</span>
+                        <button>Entrar</button>
+                    </form>
+                </div>
             </div>
         </div>
     );

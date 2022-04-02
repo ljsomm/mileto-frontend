@@ -1,3 +1,4 @@
+import Course from "../screens/Course";
 import Dashboard from "../screens/Dashboard";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
@@ -45,10 +46,15 @@ const routes = [
         private: true
     },
     {
+        path: '/course',
+        component: Course,
+        fullScreen: true
+    },
+    {
         path: '*',
         component: NotFound,
         title: 'Página não encontrada'
-    }
+    },
 ];
 
 export default routes;
