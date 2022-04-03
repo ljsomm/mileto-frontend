@@ -5,7 +5,7 @@ import Course from "../../services/Course";
 import styles from './styles.module.css';
 
 
-const CourseDetails = () => {
+const CourseDetails = ({ title }) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const id = searchParams.get("id");
     const [course, setCourse] = useState({});
@@ -15,8 +15,10 @@ const CourseDetails = () => {
     }
 
     useEffect(()=>{
-        getCourse(id);
+       getCourse(id)
     }, []);
+
+    useEffect(()=>{ document.title = `Mileto - ${course.name ? course.name : title}` }, [course])
 
     return(
         <div className={styles["course-container"]}>
@@ -26,12 +28,13 @@ const CourseDetails = () => {
             <div className={styles["content-body"]}>
                 <div className={styles["about"]}>
                     <h3>Sobre este curso</h3>
-                   {course.description ? <p className={styles.paragraph}>{course.description}</p> : <p>Carregando Descrição...</p>} 
+                    <p className={styles.paragraph}>{ course.description ? course.description : "Carregando descrição..."}</p>
                 </div>
                 <div className={styles["course-section"]}>
                     <div className={styles["thumbnail-container"]}>
                         {course.Images ? <img className={styles.thumbnail} src={process.env.REACT_APP_BACKEND+'/'+course.Images[0].path.split('tmp')[1]} alt="Thumbnail do Curso"/> : <Loading label="Carregando Curso"/>}
                     </div>
+                    <button className={styles["link-course"]}>{course.id ? "Inscrever-se" : "Carregando..."}</button>
                 </div>
             </div>
         </div>

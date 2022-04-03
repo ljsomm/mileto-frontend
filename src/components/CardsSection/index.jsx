@@ -13,7 +13,7 @@ const CardsSection = ({ title, list }) => {
             <h2 className={styles["card-section-title"]}>{title}</h2>
             <div ref={scrollRef} className={styles["card-section"]} >
                 {
-                    list.map((item, key) => <Card key={key} title={item.name} image={process.env.REACT_APP_BACKEND+'/'+item.Images[0].path.split('tmp')[1]} description={item.description} link={`/course?id=${item.id}`} />)
+                    list.map((item, key) => <Card key={key} title={item.name} image={process.env.REACT_APP_BACKEND+'/'+item.Images[0].path.split('tmp')[1]} description={item.description} link={`/curso?id=${item.id}`} />)
                 }
                 { 
                     scroll >= 300 && 

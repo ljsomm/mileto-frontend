@@ -35,7 +35,7 @@ const routes = [
         hideHeader: true
     },
     {
-        path: '/userterms',
+        path: '/termos-de-uso',
         component: Terms,
         title: 'Termos de Uso'
     },
@@ -46,7 +46,8 @@ const routes = [
         private: true
     },
     {
-        path: '/course',
+        path: '/curso',
+        title: 'Curso',
         component: Course,
         fullScreen: true
     },

@@ -13,7 +13,7 @@ const Footer = () => {
     return(
         <footer style={function(){if(pathname === '/cadastro' || pathname === '/login'){ return { display: 'none' }; }}()}>
             <ol>
-            <Link to = "/userterms"> <li> Termos de uso </li> </Link>
+            <Link to = "/termos-de-uso"> <li> Termos de uso </li> </Link>
                 <li>Denunciar abuso</li>
                 <li onClick={()=>dispatch({
                     type: "OPEN",

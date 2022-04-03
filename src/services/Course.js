@@ -18,6 +18,9 @@ const Course = {
         catch(e){
             throw e.response.err;
         }
+    },
+    subscribe: async () => {
+        alert("INSCREVEU");
     }
 }
 

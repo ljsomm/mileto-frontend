@@ -1,7 +1,3 @@
-.course-container{
-    height: 100%;
-}
-
 .title{
     color: white;
     font-weight: lighter;
@@ -11,30 +7,34 @@
     background: linear-gradient(#374A4F, #3A455E);
     min-height: 200px;
     padding: 0px 30px;
-    text-justify:distribute;
     display: flex; 
     align-items: center;
 }
 
-.paragraph{
-    text-align: justify;
-    font-size: 25px;
-}
-
 .content-body{
     display: flex;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
 }
 
 .about{
-    width: 65%;
-    padding: 30px;
+    width: 75%;
     box-sizing: border-box;
 }
 
+.about h3, .about p{
+    box-sizing: border-box;
+}
+
+.paragraph{
+    text-align: justify;
+    font-size: 15px;
+    padding: 30px;
+    line-height: 0.75cm;
+}
+
 .about h3{
-    margin-bottom: 20px;
+    margin-top: 30px;
+    padding: 0 30px;
 }
 
 .course-section{
@@ -50,7 +50,7 @@
 .thumbnail-container{
     background-color: white;
     height: 300px;
-    width: 500px;
+    width: 100%;
     border: 1px solid gray;
     border-radius: 5px;
 }
@@ -58,4 +58,22 @@
 .thumbnail{
     height: 100%;
     width: 100%;
+}
+
+.link-course{
+    background-color: #374A4F;
+    color: white;
+    border: none;
+    font-size: 17.5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(120, 120, 120);
+    margin-top: 50px;
+    transition: 0.25s;
+}
+
+.link-course:hover{
+    background-color: #475c62;
 }

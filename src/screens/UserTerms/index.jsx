@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Switch from '../../components/Switch';
 import './styles.css';
 
 const Terms = ({ title }) => {
-    const [state, setState] = useState("A");
-    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = `Mileto - ${title}`;
