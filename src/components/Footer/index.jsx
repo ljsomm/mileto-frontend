@@ -14,7 +14,32 @@ const Footer = () => {
         <footer style={function(){if(pathname === '/cadastro' || pathname === '/login'){ return { display: 'none' }; }}()}>
             <ol>
             <Link to = "/userterms"> <li> Termos de uso </li> </Link>
-                <li>Denunciar abuso</li>
+
+            <li onClick={()=>dispatch({
+                    type: "OPEN",
+                    modal: {
+                        kind: "FORM",
+                        closeButton: true,
+                        Header: () => <h1>Denunciar Abuso</h1>,
+                        Body: () =>{
+                            return(
+                            <form>
+                                <select name="abuseType" id="abuse">
+                                    <option value="" defaultChecked disabled> Selecione a Violação </option>
+                                    <option value="racism"> Racismo </option>
+                                    <option value="sexism"> Sexism </option>
+                                    <option value="homofobie"> Homofobia </option>
+                                    <option value="negativeAtitude"> Atitude Negativa </option>
+                                </select>
+                                <label>Comentário</label>
+                                <textarea name="inp-coment" id="inp-coment" cols="30" rows="10"></textarea>
+                                <button>Enviar</button>
+                            </form>
+                            );
+                        },
+                    }
+                })}>Denunciar abuso</li>
+                
                 <li onClick={()=>dispatch({
                     type: "OPEN",
                     modal: {

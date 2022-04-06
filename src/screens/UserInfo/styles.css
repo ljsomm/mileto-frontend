@@ -1,0 +1,42 @@
+.user-info-bg{
+    display: flex;
+    margin-left: 250px;
+    margin-top: 50px;
+    border: 2px solid black;
+    background-color: white;
+    width: 900px;
+    height: 400px ;
+}
+
+.userchange-info{
+    display: flex;
+    width: 75%;
+    margin: 30px 0px;
+    text-align: center;
+    flex-direction: column;
+    padding: 4px;
+    margin: 30px;
+}
+
+.user-options{
+
+    background-color: blue;
+    color: white;
+    padding: 30px;
+}
+
+.user-info-title{
+    margin: 10px;
+}
+
+.user-info-text{
+    margin: 10px;
+}
+
+.myuserimg{
+    width: 110px;
+    height: 120px;
+    margin-bottom: 10px;
+    border: white 2px solid;
+    border-radius: 70px;
+}

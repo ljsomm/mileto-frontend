@@ -5,6 +5,7 @@ import Main from "../screens/Main";
 import NotFound from "../screens/NotFound";
 import SignUp from "../screens/SignUp";
 import Terms from "../screens/UserTerms";
+import UserInfo from "../screens/UserInfo";
 
 const routes = [
     {
@@ -48,6 +49,12 @@ const routes = [
         path: '*',
         component: NotFound,
         title: 'Página não encontrada'
+    },
+
+    {
+        path: '/userinfo',
+        component: UserInfo,
+        title: 'UserInfo',
     }
 ];
 
