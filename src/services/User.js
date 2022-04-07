@@ -39,6 +39,15 @@ const User = {
             }
         }
         
+    },
+    showCourses: async (token) =>{
+        try{
+            const response = await api.get('/user/courses', { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            return e.response.data;
+        }
     }
 }
 

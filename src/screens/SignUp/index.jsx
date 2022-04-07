@@ -22,6 +22,7 @@ const SignUp = ({ title }) => {
     const abbreviationRef = useRef();
     const customRef = useRef();
     const treatmentRef = useRef();
+    const formRef = useRef();
 
     const [ signUpButton, setSignUpButton ] = useState("Continuar");
     const [ error, setError ] = useState(null);
@@ -41,6 +42,10 @@ const SignUp = ({ title }) => {
         }
     );
 
+        useEffect(()=>{
+            formRef.current[0].focus()
+        }, [step])
+
     useEffect(() => {
         document.title = `Mileto - ${title}`;
     }, [title]);
@@ -55,7 +60,7 @@ const SignUp = ({ title }) => {
             </div>
             <div className='sign-side'>
                 <h2 className="sign-title">Cadastro</h2>
-                <form className="form" action="/principal" method="get" onSubmit={async (e)=>{
+                <form ref={formRef} className="form" action="/principal" method="get" onSubmit={async (e)=>{
                     e.preventDefault();
                     switch(step){
                         case 1:

@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import Course from "../../services/Course";
 import styles from './styles.module.css';
-
+import { useCookies } from 'react-cookie';
+import User from "../../services/User";
 
 const CourseDetails = ({ title }) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const id = searchParams.get("id");
+    const [cookies] = useCookies();
     const [course, setCourse] = useState({});
+    const [associated, setAssociated] = useState(false);
+    const navigate = useNavigate();
 
     async function getCourse(id){
         setCourse(await Course.get(id));
     }
 
+    async function isAlreadyAssociated(id, token){
+       const data = await User.showCourses(token);
+       setAssociated(data.Courses.filter(item=>item.id ===  parseInt(id)).length > 0);
+    }
+
     useEffect(()=>{
        getCourse(id)
+       isAlreadyAssociated(id, cookies.__token);
     }, []);
 
     useEffect(()=>{ document.title = `Mileto - ${course.name ? course.name : title}` }, [course])
@@ -34,7 +44,14 @@ const CourseDetails = ({ title }) => {
                     <div className={styles["thumbnail-container"]}>
                         {course.Images ? <img className={styles.thumbnail} src={process.env.REACT_APP_BACKEND+'/'+course.Images[0].path.split('tmp')[1]} alt="Thumbnail do Curso"/> : <Loading label="Carregando Curso"/>}
                     </div>
-                    <button className={styles["link-course"]}>{course.id ? "Inscrever-se" : "Carregando..."}</button>
+                    <button className={styles["link-course"]} onClick={async (e)=>{if(course.id && cookies.__token){
+                        if(!associated){
+                            Course.subscribe(course.id, cookies.__token) ? setAssociated(true) : e.target.innerHTML = "Algum erro inesperado aconteceu";
+                        }
+                        else{
+                            navigate(`/watch/${id}`);
+                        }
+                    }}}>{course.id ? associated ? "Acessar curso": "Inscrever-se" : "Carregando..."}</button>
                 </div>
             </div>
         </div>

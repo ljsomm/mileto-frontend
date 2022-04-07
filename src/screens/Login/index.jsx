@@ -28,6 +28,8 @@ const Login = ({title}) => {
     const [ error, setError ] = useState("");
 
 
+    useEffect(()=>emailRef.current.focus(), []);
+
     useEffect(()=>setCookie('screen', state), [state, setCookie])
 
     useEffect(() => {

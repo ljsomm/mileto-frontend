@@ -19,8 +19,14 @@ const Course = {
             throw e.response.err;
         }
     },
-    subscribe: async () => {
-        alert("INSCREVEU");
+    subscribe: async (id, token) => {
+        try{
+            const response = await api.post(`${process.env.REACT_APP_BACKEND}/course/${id}`, token, { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            throw e.response.err;
+        }
     }
 }
 

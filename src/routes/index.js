@@ -6,6 +6,7 @@ import Main from "../screens/Main";
 import NotFound from "../screens/NotFound";
 import SignUp from "../screens/SignUp";
 import Terms from "../screens/UserTerms";
+import Watch from "../screens/Watch";
 
 const routes = [
     {
@@ -50,6 +51,12 @@ const routes = [
         title: 'Curso',
         component: Course,
         fullScreen: true
+    },
+    {
+        path: '/watch/:id',
+        title: 'Assistir Curso',
+        component: Watch,
+        private: true,
     },
     {
         path: '*',
