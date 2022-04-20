@@ -3,6 +3,7 @@ import Dashboard from "../screens/Dashboard";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
 import Main from "../screens/Main";
+import MyCourses from "../screens/MyCourses";
 import NotFound from "../screens/NotFound";
 import SignUp from "../screens/SignUp";
 import Terms from "../screens/UserTerms";
@@ -57,6 +58,12 @@ const routes = [
         title: 'Assistir Curso',
         component: Watch,
         private: true,
+    },
+    {
+        path: '/meus-cursos',
+        component: MyCourses,
+        private: true,
+        title: 'Meus cursos'
     },
     {
         path: '*',

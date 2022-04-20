@@ -27,6 +27,15 @@ const Course = {
         catch(e){
             throw e.response.err;
         }
+    },
+    getCurrentVideo: async (token, id) => {
+        try{
+            const response = await api.get(`${process.env.REACT_APP_BACKEND}/course/${id}/current`, { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            throw e.response;
+        }
     }
 }
 

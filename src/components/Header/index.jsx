@@ -103,7 +103,7 @@ const Header = () => {
                         }>
                         <ol>
                             <li>Configurações</li>
-                            <li>Meus Cursos</li>
+                            <li onClick={()=>navigate('/meus-cursos?page=1')}>Meus Cursos</li>
                             <li onClick={logout}>Sair</li>
                         </ol>
                     </div>
