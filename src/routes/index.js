@@ -5,6 +5,7 @@ import Login from "../screens/Login";
 import Main from "../screens/Main";
 import MyCourses from "../screens/MyCourses";
 import NotFound from "../screens/NotFound";
+import Settings from "../screens/Settings";
 import SignUp from "../screens/SignUp";
 import Terms from "../screens/UserTerms";
 import Watch from "../screens/Watch";
@@ -64,6 +65,12 @@ const routes = [
         component: MyCourses,
         private: true,
         title: 'Meus cursos'
+    },
+    {
+        path: '/configuracoes',
+        private: true,
+        component: Settings,
+        title: "Configurações"
     },
     {
         path: '*',

@@ -8,6 +8,7 @@ import { useCookies } from 'react-cookie';
 import UserContext from '../../contexts/UserContext';
 import User from '../../services/User';
 import classNames from 'classnames';
+import UserUtil from '../../utils/UserUtil';
 
 const Header = () => {
     const { state, dispatch } = useContext(UserContext);
@@ -30,11 +31,6 @@ const Header = () => {
                 }
             }
         }   
-    }
-
-    function nameFilter(name){
-        const names = name.split(' ');
-        return `${names[0]} ${names[names.length-1].length >= 10 ? `${names[names.length-1][0]}.`: names[names.length-1]}`;
     }
 
     const navigate = useNavigate();
@@ -90,8 +86,8 @@ const Header = () => {
                         "header-user-section__hover": !menu,
                         "header-user-section__active": menu
                         })}>
-                        <img alt="User" className='user-icon' src={process.env.REACT_APP_BACKEND + state.Images[0].path.split("public")[1]}/>
-                        <span>{nameFilter(state.name)}</span>
+                        <img alt="User" className='user-icon' src={UserUtil.imageSrcFilter(state.Images[0].path)}/>
+                        <span>{UserUtil.nameFilter(state.name)}</span>
                     </div>
                         {
                             menu &&
@@ -102,7 +98,7 @@ const Header = () => {
                         })
                         }>
                         <ol>
-                            <li>Configurações</li>
+                            <li onClick={()=>navigate('/configuracoes')}>Configurações</li>
                             <li onClick={()=>navigate('/meus-cursos?page=1')}>Meus Cursos</li>
                             <li onClick={logout}>Sair</li>
                         </ol>

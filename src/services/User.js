@@ -48,6 +48,24 @@ const User = {
         catch(e){
             return e.response.data;
         }
+    },
+    update: async (token, formData) => {
+        try{
+            const response = await api.put('/user', formData, { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            return e.response;
+        }
+    },
+    updatePassword: async (token, currentPassword, newPassword) => {
+        try{
+            const response = await api.put('/user/password', { currentPassword, newPassword }, { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            return e.response.data;
+        }
     }
 }
 
