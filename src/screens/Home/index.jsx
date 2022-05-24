@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
+import quotes from '../../components/Quotes/Quotes';
+import { useState } from 'react';
 import './styles.css';
+
 
 const Home = ({ title }) => {
 
+    const[quote]= useState(quotes[Math.floor(Math.random()*quotes.length)]);
 
     useEffect(() => {
         document.title = `Mileto - ${title}`;
@@ -12,8 +16,8 @@ const Home = ({ title }) => {
 
         <>
             <div className='home'>
-                <h1>"O aprendizado é infinito, nunca pare de apreender"</h1>
-                <p>- Texto futuramente gerado automaticamente</p>
+                <h1 onLoad={useState}> "{quote.quote}" </h1>
+                <p>- {quote.author}</p>
             </div>
             <div className='home'>
                 <div className="home-content-left">
