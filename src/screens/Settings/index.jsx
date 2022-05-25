@@ -14,7 +14,7 @@ const Settings = ({ title }) => {
     const [user, setUser] = useState({});
     const [configType, setConfigType] = useState(1);
     const [removeImage, setRemoveImage] = useState(false);
-    const [cookies] = useCookies();
+    const [cookies, , removeCookies] = useCookies();
     const [imageSrc, setImageSrc] = useState('');
     const imageRef = useRef();
     const [changePassword, setPassword] = useState({password: '', newPassword: '', confirmation: ''});
@@ -81,7 +81,6 @@ const Settings = ({ title }) => {
         if(changePassword.password !== '' && changePassword.newPassword !== '' && changePassword.confirmation !== ''){
             if(changePassword.newPassword === changePassword.confirmation){
                 const res = await User.updatePassword(cookies.__token, changePassword.password, changePassword.newPassword);
-                console.log(res);
                 if(res.err){
                     setPasswordError(res.err);
                 }
@@ -252,7 +251,50 @@ const Settings = ({ title }) => {
                                             </>
                                         );
                                 case 3:
-                                    return(<h2>Avançado</h2>);
+                                    return(<>
+                                        <h2>Avançado</h2>
+                                        <div className={styles['profile-form']}>
+                                            <div className={styles['advanced-option']}>
+                                                
+                                                <label>Excluir minha conta</label>
+                                                <button onClick={()=>Modal.dispatch({type: "OPEN", modal: {
+                                                    kind: "FORM",
+                                                    closeButton: true,
+                                                    Header: ()=> <h2>Confirmação de Exclusão</h2>,
+                                                    Body: ()=> {
+                                                        
+                                                        const [modalError, setModalError] = useState(null);
+
+
+                                                        async function handlerDelete(e){
+                                                            e.preventDefault();
+                                                            if(e.target.delete.value !== "Delete"){
+                                                                setModalError("Preencha o campo corretamente");
+                                                            }
+                                                            else{
+                                                                setModalError(null);
+                                                                await User.delete(cookies.__token);
+                                                                removeCookies('__token');   
+                                                                Modal.dispatch({ type: "CLOSE" });
+                                                            }
+                                                        }
+
+                                                        return(
+                                                            <>
+                                                                <form onSubmit={handlerDelete}>
+                                                                    <p className={styles["modal-paragraph"]}>Ao realizar esta ação, serão excluídos todos os seus dados de nosso sistema, não sendo possível reverter.</p> 
+                                                                    <p className={styles["modal-paragraph"]}>Para atestar sua confirmação digite <b>Delete</b> no campo abaixo.</p>
+                                                                    <input name="delete" type="text" className={styles["confirmation-input"]} />
+                                                                    <span className={styles["modal-error"]}>{modalError}</span>
+                                                                    <button>Confirmar</button>
+                                                                </form>
+                                                        </>
+                                                        );
+                                                    },
+                                                }})} className={styles["delete-button"]}>Excluir</button>
+                                            </div>
+                                        </div>
+                                        </>);
                             }
                         })()
                     }

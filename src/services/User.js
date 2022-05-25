@@ -66,6 +66,15 @@ const User = {
         catch(e){
             return e.response.data;
         }
+    },
+    delete: async (token) => {
+        try{
+            const response = await api.delete('/user', { headers: { token } });
+            return response.data;
+        }
+        catch(e){
+            return e.response;
+        }
     }
 }
 
