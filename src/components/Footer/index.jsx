@@ -25,7 +25,7 @@ const Footer = () => {
                             return(
                             <form>
                                 <select name="abuseType" id="abuse">
-                                    <option value="" defaultChecked disabled> Selecione a Violação </option>
+                                    <option value="" defaultChecked disabled selected> Selecione a Violação </option>
                                     <option value="racism"> Racismo </option>
                                     <option value="sexism"> Sexism </option>
                                     <option value="homofobie"> Homofobia </option>
