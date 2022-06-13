@@ -1,16 +1,21 @@
 import classNames from "classnames";
+import { useCookies } from "react-cookie";
 import { useLocation } from "react-router-dom";
 import routes from "../../routes";
 import Footer from "../Footer";
 import Header from "../Header";
+import LateralHeader from "../LateralHeader";
 import Modal from "../Modal";
 import './styles.css';
 
 const DefaultLayout = ({ children }) => {
     const { pathname } = useLocation();
-    const location = useLocation();
+    const [cookies] = useCookies();
     return(
-        <div className="default-layout">
+        <div className={classNames({
+            "default-layout": cookies.screen !== 'P',
+            "lateral-layout": cookies.screen === 'P',
+        })}>
             {
                 pathname === '/login' || pathname === '/cadastro' ?
                 <main className="sign-main">
@@ -18,7 +23,9 @@ const DefaultLayout = ({ children }) => {
                 </main>
                 :
                 <>
-                    <Header/>
+                    {
+                        cookies.screen === 'P' ? <LateralHeader/> : <Header/>
+                    }
                         <main className={classNames(
                             {
                                 'mileto-main': routes.find(item=>item.path === pathname && item.fullScreen),
@@ -28,7 +35,7 @@ const DefaultLayout = ({ children }) => {
                         )}>
                             { children }
                         </main>
-                    <Footer/>
+                        {cookies.screen !== 'P' && <Footer/>}
                 </>
             }
             <Modal/>

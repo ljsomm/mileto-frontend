@@ -5,6 +5,12 @@
     height: 100vh;
 }
 
+.lateral-layout{
+    display: flex;
+    background-color: #FBFBFB;
+    height: 100vh;
+}
+
 .mileto-main{
     flex: 1;
 }

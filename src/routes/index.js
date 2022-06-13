@@ -7,6 +7,7 @@ import MyCourses from "../screens/MyCourses";
 import NotFound from "../screens/NotFound";
 import Settings from "../screens/Settings";
 import SignUp from "../screens/SignUp";
+import TeacherCourses from "../screens/TeacherCourses";
 import Terms from "../screens/UserTerms";
 import Watch from "../screens/Watch";
 
@@ -71,6 +72,12 @@ const routes = [
         private: true,
         component: Settings,
         title: "Configurações"
+    },
+    {
+        path: '/cursos-do-professor',
+        private: true,
+        component: TeacherCourses,
+        title: 'Meus cursos'
     },
     {
         path: '*',
