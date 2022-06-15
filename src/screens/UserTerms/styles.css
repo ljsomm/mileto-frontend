@@ -3,7 +3,6 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
 .term-type{
     text-align: center;
     margin: 2%;
@@ -13,6 +12,7 @@
     margin-top: 4%;
     margin-left: 4%;
     text-decoration: solid;
+    border-bottom: 2px solid black;
 }
 
 .term-paragraph{

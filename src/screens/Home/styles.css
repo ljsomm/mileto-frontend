@@ -2,6 +2,10 @@
     text-decoration: none;
 }
 
+h1{
+    margin: 2vh;
+}
+
 .home{
     height: 100vh;
     display: flex;
@@ -19,4 +23,26 @@
 
 .home:nth-child(1){
     background: url('../../assets/images/home-background.svg');
+}
+
+.home-content-left{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-content-right{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-content-text{
+    width: 100vh;
+}
+
+.home-content-video{
+    border: 2px solid black;
+    width: 80vh;
+    height: 60vh;
 }
