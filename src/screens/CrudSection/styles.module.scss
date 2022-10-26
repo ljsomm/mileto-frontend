@@ -1,0 +1,44 @@
+@use "../../styles" as *;
+
+.section-container {
+  padding: 0 2vh;
+
+  div.created-course {
+    background-color: rgba(179, 229, 179, 0.615);
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: green;
+    border-radius: 5px;
+    border: 2px solid rgb(134, 174, 134);
+    transition: 1s;
+    margin-bottom: 20px;
+
+    &__fade-out {
+      opacity: 0;
+    }
+
+    &__none {
+      display: none;
+    }
+  }
+  .btn-add-section-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .centralizer {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .btn-add-section {
+        @include dashboard-button;
+      }
+      span {
+        font-size: 13px;
+        margin-top: 5px;
+        user-select: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

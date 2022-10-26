@@ -1,115 +1,109 @@
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 500px 250px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 500px 250px;
 }
 
-.grid h2{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    padding: 20px;
+.grid h2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 20px;
 }
 
-.sections{
-    grid-row-start: 2;
-    grid-row-end: 4;
-    padding: 10px;
-    max-height: 90%;
-    overflow: auto;
+.sections {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  padding: 10px;
+  max-height: 90%;
+  overflow: auto;
 }
 
-.sections details{
-    cursor: pointer;
-    box-shadow: 2px 2px 12px rgba(89, 89, 89, 0.209);
-    border: 1px solid rgba(16, 16, 16, 0.34);
-    transition: 1s;
-
+.sections details {
+  cursor: pointer;
+  box-shadow: 2px 2px 12px rgba(89, 89, 89, 0.209);
+  border: 1px solid rgba(16, 16, 16, 0.34);
+  transition: 1s;
 }
 
-.sections details:first-child{
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+.sections details:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-.sections details:first-child summary{
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+.sections details:first-child summary {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-
-.sections details summary{  
-    cursor: pointer;
-    background-color: whitesmoke;
-    padding: 15px;
-    font-weight: bold;
+.sections details summary {
+  cursor: pointer;
+  background-color: whitesmoke;
+  padding: 15px;
+  font-weight: bold;
 }
 
-.sections details ol{
-    margin: 0;
-    padding: 0;
+.sections details ol {
+  margin: 0;
+  padding: 0;
 }
 
-.sections details ol li{  
-    padding: 10px;
-    list-style: none;
+.sections details ol li {
+  padding: 10px;
+  list-style: none;
 }
 
-
-.video{
-    width: 75%;
-    height: 100%;
-    box-shadow: 1px 1px 10px rgba(129, 129, 129, 0.404);
+.video {
+  width: 75%;
+  height: 100%;
+  box-shadow: 1px 1px 10px rgba(129, 129, 129, 0.404);
 }
 
-.video-container{
-    width: 100%;
-    height: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+.video-container {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
-.feedback{
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-    align-items: center;
+.feedback {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.course-menu{
-    margin-top: 10px;
-    padding: 10px 15px; 
-    box-sizing: border-box;
-    box-shadow: 2px 2px 12px rgba(89, 89, 89, 0.209);
-    width: 75%;
-    border-radius: 10px;
+.course-menu {
+  margin-top: 10px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 12px rgba(89, 89, 89, 0.209);
+  width: 75%;
+  border-radius: 10px;
 }
 
-.feedback button{
-    cursor: pointer;
-    background-color: #374A4F;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-
- }
-
-.section-video{
-    transition: 0.25s;
-    font-size: 15px;
-
+.feedback button {
+  cursor: pointer;
+  background-color: #374a4f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
 }
 
-.section-video:hover{
-    background-color: rgb(245, 245, 245);
-    
+.section-video {
+  transition: 0.25s;
+  font-size: 15px;
 }
 
-.section-video__active{
-    background-color: rgb(242, 242, 242);
-    border: 1px solid rgb(223, 223, 223);
-    font-weight: bold;
-    color:rgb(76, 76, 76);
+.section-video:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.section-video__active {
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(223, 223, 223);
+  font-weight: bold;
+  color: rgb(76, 76, 76);
 }

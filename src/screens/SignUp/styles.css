@@ -1,9 +1,10 @@
-.to-login h3, .to-login button{
-    margin: 7.5px 0px;
-    text-align: center;
+.to-login h3,
+.to-login button {
+  margin: 7.5px 0px;
+  text-align: center;
 }
 
-.error{
-    color: red;
-    font-size: 12.5px;
+.error {
+  color: red;
+  font-size: 12.5px;
 }

@@ -1,0 +1,53 @@
+@use "../../styles" as *;
+
+.container {
+
+  .parent{
+    max-height: 750px;
+    overflow: auto;
+    padding: 0 2vh;
+  }
+
+  .nav {
+    padding: 1vh 2vh;
+    .btn-success {
+      background-color: transparent;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 2px solid #3a455e;
+      color: #374a4f;
+      cursor: pointer;
+      transition: 0.25s;
+
+      &:hover {
+        background-color: #3a455e;
+        color: white;
+      }
+    }
+  }
+
+  .showmore {
+    display: flex;
+    justify-content: center;
+    span {
+      cursor: pointer;
+      opacity: 0.8;
+      transition: 0.25s;
+      color: #657394;
+      font-weight: 600;
+      text-decoration: wavy;
+      font-size: 15px;
+      text-decoration: underline;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .courses-container {
+    padding: 1vh 2vh;
+    max-height: 600px;
+    overflow: hidden;
+  }
+}
+

@@ -1,22 +1,25 @@
 @font-face {
-    font-family: 'Century Gothic';
-    src: url('../assets/fonts/CenturyGothic.ttf');
+  font-family: "Century Gothic";
+  src: url("../assets/fonts/CenturyGothic.ttf");
 }
 
-* { margin: 0;  font-family: 'Century Gothic'; }
-
-:root{
-    --azul-escuro: #3A455E;
+* {
+  margin: 0;
+  font-family: "Century Gothic";
 }
 
-.mirror{
-    transform: rotate(180deg);
+:root {
+  --azul-escuro: #3a455e;
 }
 
-img{
-    user-select: none;
+.mirror {
+  transform: rotate(180deg);
 }
 
-.hide{
-    display: none;
+img {
+  user-select: none;
+}
+
+.hide {
+  display: none;
 }

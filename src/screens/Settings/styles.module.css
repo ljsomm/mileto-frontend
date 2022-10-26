@@ -1,252 +1,253 @@
-.container{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.settings-container{
-    box-shadow: 2px 2px 12px rgba(112, 112, 112, 0.39);
-    display: flex;
-    height: 90%;
-    width: 50%;
+.settings-container {
+  box-shadow: 2px 2px 12px rgba(112, 112, 112, 0.39);
+  display: flex;
+  height: 90%;
+  width: 50%;
 }
 
-.settings-menu{
-    background: linear-gradient(#3A455E, #486268);
-    width: 30%;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.settings-menu {
+  background: linear-gradient(#3a455e, #486268);
+  width: 30%;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.settings-photo, .settings-navigation{
-    height: 50%;
+.settings-photo,
+.settings-navigation {
+  height: 50%;
 }
 
-.settings-photo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.settings-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.user-picture-container img{
-    height: 225px;
-    width: 225px;
-    border-radius: 100%;
-
+.user-picture-container img {
+  height: 225px;
+  width: 225px;
+  border-radius: 100%;
 }
 
-.settings-user-name{
-    margin-top: 10px;
+.settings-user-name {
+  margin-top: 10px;
 }
 
-.settings-navigation ol{
-    list-style: none;
-    padding: 0;
+.settings-navigation ol {
+  list-style: none;
+  padding: 0;
 }
 
-.nav-item{
-    padding: 15px 20px;
-    border-bottom: 1px solid #636d6f;
-    cursor: pointer;
-    transition: 0.25s;
+.nav-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #636d6f;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
-.nav-item:hover{
-    background-color:  #394d52;
+.nav-item:hover {
+  background-color: #394d52;
 }
 
-.nav-item:first-child{
-    border-top: 1px solid #636d6f;
+.nav-item:first-child {
+  border-top: 1px solid #636d6f;
 }
 
-.settings-content{
-    padding: 50px;
-    width: 70%;
+.settings-content {
+  padding: 50px;
+  width: 70%;
 }
 
-.nav-item__active{
-    background-color:  #3b4f54;
+.nav-item__active {
+  background-color: #3b4f54;
 }
 
-.profile-form{
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
 }
 
-.profile-form > input, .profile-form > select{
-    margin: 10px 0px;
+.profile-form > input,
+.profile-form > select {
+  margin: 10px 0px;
 }
 
-.profile-form input{
-    padding: 10px;
-    border-radius: 5px;
-    border: 0.5px solid rgba(98, 98, 98, 0.476);
-    outline: none;
-    transition: 0.25s;
+.profile-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px solid rgba(98, 98, 98, 0.476);
+  outline: none;
+  transition: 0.25s;
 }
 
-.profile-form > label{
-    margin-top: 25px;
+.profile-form > label {
+  margin-top: 25px;
 }
 
-.profile-form input:focus{
-    box-shadow: 2px 2px 12px rgb(223, 223, 223);
-    border: 1px solid rgba(98, 98, 98, 0.476);
+.profile-form input:focus {
+  box-shadow: 2px 2px 12px rgb(223, 223, 223);
+  border: 1px solid rgba(98, 98, 98, 0.476);
 }
 
-.inp-gender{
-    cursor: not-allowed;
+.inp-gender {
+  cursor: not-allowed;
 }
 
-.birthdate-container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin: 10px 0px;
+.birthdate-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 10px 0px;
 }
 
-.birthdate-container input{
-    box-sizing: border-box;
-    width: 25%;
-    text-align: center;
+.birthdate-container input {
+  box-sizing: border-box;
+  width: 25%;
+  text-align: center;
 }
 
-.birthdate-container input:first-child{
-    width: 45%;
+.birthdate-container input:first-child {
+  width: 45%;
 }
 
-.settings-footer{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-top: 15px;
-    padding: 10px 0px;
+.settings-footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 15px;
+  padding: 10px 0px;
 }
 
-.settings-footer button{
-    background-color: #394d52;
-    padding: 7.5px 12.5px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14.5px;
-    border-radius: 4.5px;
-    margin: 0px 5px;
-    transition: 0.5s;
-    outline: none;
+.settings-footer button {
+  background-color: #394d52;
+  padding: 7.5px 12.5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14.5px;
+  border-radius: 4.5px;
+  margin: 0px 5px;
+  transition: 0.5s;
+  outline: none;
 }
 
-.settings-footer button:disabled{
-    background-color: #4f6970;
-    cursor: not-allowed;
+.settings-footer button:disabled {
+  background-color: #4f6970;
+  cursor: not-allowed;
 }
 
-.cancel{
-    background-color: rgb(200, 8, 8) !important;
+.cancel {
+  background-color: rgb(200, 8, 8) !important;
 }
 
-.photo-container{
-    position: relative;
-    height: 100%;
+.photo-container {
+  position: relative;
+  height: 100%;
 }
 
-.photo-hover{
-    position: absolute;
-    height: 100%;
-    top: 0;
-    width: 100%;
-    border-radius: 100%;
-    transition: 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3b4f54;
-    opacity: 0%;
-    flex-direction: column;
+.photo-hover {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  border-radius: 100%;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b4f54;
+  opacity: 0%;
+  flex-direction: column;
 }
 
-.photo-hover:hover{
-    opacity: 50%;
+.photo-hover:hover {
+  opacity: 50%;
 }
 
-.photo-hover span{
-    transition: 0.5s;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 5px;
+.photo-hover span {
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.photo-hover span:hover{
-    background-color: black;
+.photo-hover span:hover {
+  background-color: black;
 }
 
-.remove:hover{
-    color: rgb(246, 155, 155);
+.remove:hover {
+  color: rgb(246, 155, 155);
 }
 
-.photo-hover:hover span{
-    margin: 10px 0px;
+.photo-hover:hover span {
+  margin: 10px 0px;
 }
 
-.change-password{
-    background-color: red;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.change-password {
+  background-color: red;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.change-password-form{
-    flex: 1;
-    display: flex;
-    padding: 15px;
-    flex-direction: column;
-    justify-content: space-between;
+.change-password-form {
+  flex: 1;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.error{
-    color: red;
-    margin-right: 10px;
-    font-size: 15px;
+.error {
+  color: red;
+  margin-right: 10px;
+  font-size: 15px;
 }
 
-.advanced-option{
-    background-color: rgb(250, 250, 250);
-    padding: 10px 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.advanced-option {
+  background-color: rgb(250, 250, 250);
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.advanced-option .delete-button{
-    background-color:rgb(200, 8, 8);
-    padding: 7.5px 12.5px;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.advanced-option .delete-button {
+  background-color: rgb(200, 8, 8);
+  padding: 7.5px 12.5px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.modal-paragraph{
-    max-width: 350px;
-    text-align: justify;
-    font-size: 15px;
+.modal-paragraph {
+  max-width: 350px;
+  text-align: justify;
+  font-size: 15px;
 }
 
-.modal-paragraph:nth-child(2){
-    margin-top: 20px;
+.modal-paragraph:nth-child(2) {
+  margin-top: 20px;
 }
 
-.confirmation-input{
-    margin-top: 30px;
+.confirmation-input {
+  margin-top: 30px;
 }
 
-.modal-error{
-    color: red;
-    font-size: 12.5px;
+.modal-error {
+  color: red;
+  font-size: 12.5px;
 }

@@ -1,26 +1,26 @@
-.loading-container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.loading-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.loading{
-    height: 40px;
-    width: 40px;
-    border: 2px solid #374A4F;
-    border-right-color:#ffffff;
-    border-radius: 100%;
-    animation: loading 1s infinite linear;
+.loading {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #374a4f;
+  border-right-color: #ffffff;
+  border-radius: 100%;
+  animation: loading 1s infinite linear;
 }
-.loading-span{
-    margin-top: 10px;
+.loading-span {
+  margin-top: 10px;
 }
 
-@keyframes loading{
-    from{
-        transform: rotate(360deg);
-    }
+@keyframes loading {
+  from {
+    transform: rotate(360deg);
+  }
 }

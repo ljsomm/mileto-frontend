@@ -1,57 +1,57 @@
-.card-section-container{
-    position: relative;
-    margin: 20px;
-    margin-top: 55px;
+.card-section-container {
+  position: relative;
+  margin: 20px;
+  margin-top: 55px;
 }
 
-.card-section-title{
-    padding: 10px;
-    font-size: 27.5px;
-    color: rgb(77, 77, 77);
+.card-section-title {
+  padding: 10px;
+  font-size: 27.5px;
+  color: rgb(77, 77, 77);
 }
 
-.card-section{
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    overflow-x: auto;
+.card-section {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
-.card-section::-webkit-scrollbar{
-    display: none;
+.card-section::-webkit-scrollbar {
+  display: none;
 }
 
-.show-more{
-    background-color: #374a4f91;
-    height: 60px;
-    width: 50px;
-    right: 0;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.25s;
+.show-more {
+  background-color: #374a4f91;
+  height: 60px;
+  width: 50px;
+  right: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
-.show-more:hover{
-    background-color: #374a4fe1;
+.show-more:hover {
+  background-color: #374a4fe1;
 }
 
-.show-less{
-    background-color: #374a4f91;
-    height: 60px;
-    width: 50px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.25s;
+.show-less {
+  background-color: #374a4f91;
+  height: 60px;
+  width: 50px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
-.show-less:hover{
-    background-color: #374a4fe1;
+.show-less:hover {
+  background-color: #374a4fe1;
 }

@@ -1,95 +1,98 @@
-.sign{
-    background-color: white;
-    height: 650px;
-    width: 750px;
-    display: flex;
+.sign {
+  background-color: white;
+  height: 650px;
+  width: 750px;
+  display: flex;
 }
 
-.sign-title{
-    font-size: 30px;
-    margin-bottom: 30px;
+.sign-title {
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
-.sign-side:nth-child(1){
-    background-color: #3A455E;
-    width: 35%;
-    height: calc(100%-60px);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 40px;
+.sign-side:nth-child(1) {
+  background-color: #3a455e;
+  width: 35%;
+  height: calc(100%-60px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px;
 }
 
-.to-sign-up *{ 
-    margin: 7.5px 0px;
-    text-align: center;
+.to-sign-up * {
+  margin: 7.5px 0px;
+  text-align: center;
 }
 
-.sign-side:nth-child(1) button{ 
-    width: 90%;
-    padding: 10px;
-    color: white;
-    border: 2px solid white;
-    background-color: transparent;    
-    font-size: 15px;
-    transition: 0.25s;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 0.3rem;
+.sign-side:nth-child(1) button {
+  width: 90%;
+  padding: 10px;
+  color: white;
+  border: 2px solid white;
+  background-color: transparent;
+  font-size: 15px;
+  transition: 0.25s;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0.3rem;
 }
 
-.sign-side:nth-child(1) button:hover{
-    background-color: white;
-    color: #3A455E;
+.sign-side:nth-child(1) button:hover {
+  background-color: white;
+  color: #3a455e;
 }
 
-.sign-side:nth-child(2){
-    width: 65%;
-    height: 100%;
-    padding: 60px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.sign-side:nth-child(2) {
+  width: 65%;
+  height: 100%;
+  padding: 60px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.form{
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    height: 75%;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
 }
 
-.form input, .form button, .form select{
-    width: 75%;
-    margin: 30px 0px;
-    text-align: center;
+.form input,
+.form button,
+.form select {
+  width: 75%;
+  margin: 30px 0px;
+  text-align: center;
 }
 
-.form input, .form select{
-    border: none;
-    border-bottom: 2px solid black;
-    outline: none;
-    padding: 5px;
-    font-size: 16px;
+.form input,
+.form select {
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
 }
 
-.form button{
-    color: #3A455E;
-    border: 2px solid #3A455E;
-    font-size: 15px;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.25s;
+.form button {
+  color: #3a455e;
+  border: 2px solid #3a455e;
+  font-size: 15px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.25s;
 }
 
-.form button:hover{
-    background-color: #3A455E;
-    color: white;
+.form button:hover {
+  background-color: #3a455e;
+  color: white;
 }

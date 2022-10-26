@@ -1,17 +1,17 @@
-.rating-background{
-    display: flex;
+.rating-background {
+  display: flex;
 }
 
-.rating-background img{
-    height: 50px;
-    width: 52.5px;
-    cursor: pointer;
-    transition: 0.25s;
-    padding: 5px;
+.rating-background img {
+  height: 50px;
+  width: 52.5px;
+  cursor: pointer;
+  transition: 0.25s;
+  padding: 5px;
 }
 
-.rating-background img:hover{
-    background-color: rgba(201, 201, 201, 0.404);
-    box-shadow: 1px 1px 10px rgba(112, 112, 112, 0.404);
-    border-radius: 50px;
+.rating-background img:hover {
+  background-color: rgba(201, 201, 201, 0.404);
+  box-shadow: 1px 1px 10px rgba(112, 112, 112, 0.404);
+  border-radius: 50px;
 }

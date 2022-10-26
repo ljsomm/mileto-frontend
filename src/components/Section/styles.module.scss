@@ -1,0 +1,36 @@
+.section-container {
+  margin-bottom: 10px;
+  .section {
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+
+    input {
+      border: none;
+      outline: none;
+      width: 97%;
+
+      &[disabled] {
+        background-color: transparent;
+      }
+    }
+  }
+
+  ul {
+    li {
+      padding: 10px 0;
+    }
+  }
+}
+
+details[open].section-container {
+  .section {
+    background-color: rgb(244, 244, 244);
+  }
+}
+
+div.section-container {
+  background-color: white;
+}

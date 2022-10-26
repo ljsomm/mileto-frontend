@@ -1,33 +1,33 @@
-.default-layout{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
-.lateral-layout{
-    display: flex;
-    background-color: #FBFBFB;
-    height: 100vh;
+.lateral-layout {
+  display: flex;
+  background-color: #fbfbfb;
+  height: 100vh;
 }
 
-.mileto-main{
-    flex: 1;
+.mileto-main {
+  flex: 1;
 }
 
-.default-main{
-    flex: 1;
-    padding: 10px;
+.default-main {
+  flex: 1;
+  padding: 10px;
 }
 
-.home-main{
-    flex: 1;
+.home-main {
+  flex: 1;
 }
 
-.sign-main{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F1F1F1;
+.sign-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
 }
