@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import quotes from "../../components/Quotes";
 import { useState } from "react";
 import "./styles.css";
-import imagem1 from '../../assets/images/logo-azul-escuro.png';
-import imagem2 from '../../assets/images/logo-branca.png';
+import imagem1 from '../../assets/images/Integrantes.jpg';
+import imagem2 from '../../assets/images/videofakemileto.jpg';
 
 const Home = ({ title }) => {
   const [quote] = useState(quotes[Math.floor(Math.random() * quotes.length)]);

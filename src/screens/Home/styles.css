@@ -44,7 +44,7 @@ h1 {
 
 .home-content-video {
   border: 2px solid black;
-  width: 80vh;
-  height: 60vh;
-  
+  width: 600px;
+  height: 500px;
+  image-orientation: inherit;
 }
