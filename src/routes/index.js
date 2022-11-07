@@ -1,6 +1,7 @@
+import { SectionProvider } from "../contexts/SectionContext";
 import Course from "../screens/Course";
 import CrudCourse from "../screens/CrudCourse";
-import CrudSection from "../screens/CrudSection";
+import CrudSectionVideo from "../screens/CrudSectionVideo";
 import Dashboard from "../screens/Dashboard";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
@@ -96,7 +97,7 @@ const routes = [
           {
             path: "secoes",
             private: true,
-            component: CrudSection,
+            component: ({title})=><SectionProvider><CrudSectionVideo title={title}/></SectionProvider>,
           },
         ],
       },

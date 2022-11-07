@@ -2,30 +2,30 @@
 
 .section-container {
   padding: 0 2vh;
+  width: 100%;
+  height: 90%;
+  box-sizing: border-box;
 
-  div.created-course {
-    background-color: rgba(179, 229, 179, 0.615);
-    padding: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    color: green;
-    border-radius: 5px;
-    border: 2px solid rgb(134, 174, 134);
-    transition: 1s;
-    margin-bottom: 20px;
+  .course-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
 
-    &__fade-out {
-      opacity: 0;
+    .section-controls {
+      overflow-y: auto;
+      border-left: 1px solid gray;
     }
 
-    &__none {
-      display: none;
+    .class-controls {
+      padding: 0 10px;
     }
   }
+
   .btn-add-section-container {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     .centralizer {
       display: flex;
       align-items: center;

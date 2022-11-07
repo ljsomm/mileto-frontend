@@ -107,6 +107,7 @@ const CrudCourse = ({ title }) => {
                 name="course-picture"
                 onChange={handleChangeFileInput}
                 type="file"
+                accept="image/*"
                 id="input-thumbnail"
               />
             </div>

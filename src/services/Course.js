@@ -62,6 +62,7 @@ const Course = {
     });
     return response;
   },
+
   /**
    * Salva secao no banco de dados
    * @param {string} token
@@ -70,6 +71,21 @@ const Course = {
    */
   storeSection: async (token, courseId, section) => {
     const response = await api.post(`/course/${courseId}/section`, section, {
+      headers: {
+        token,
+      },
+    });
+    return response;
+  },
+
+  /**
+   * Metodo de edicao de secao de um determinado curso
+   *
+   * @param {*} token
+   * @param {*} section
+   */
+  editSection: async (token, sectionId, section) => {
+    const response = await api.put(`/section/${sectionId}`, section, {
       headers: {
         token,
       },

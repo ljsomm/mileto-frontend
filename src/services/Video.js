@@ -52,6 +52,10 @@ const Video = {
     );
     return response.data;
   },
+  store: async (token, sectionId, formData) => {
+    const response = await api.post(`${process.env.REACT_APP_BACKEND}/section/${sectionId}/video`, formData, { headers: { token }, onUploadProgress: (ev) => {console.log(ev);} })
+    return response;
+  }
 };
 
 export default Video;

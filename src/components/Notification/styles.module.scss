@@ -1,0 +1,35 @@
+$font: rgb(10, 113, 10);
+$background: rgb(156, 195, 156);
+
+.notification {
+  background-color: $background;
+  color: $font;
+  padding: 10px 15px;
+  border: 1px solid $font;
+  position: absolute;
+  left: 15px;
+  bottom: 35px;
+  transition: 1s;
+  border-radius: 5px;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  span:nth-child(2) {
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__closed {
+    opacity: 0;
+  }
+
+  &__none {
+    display: none;
+  }
+}
