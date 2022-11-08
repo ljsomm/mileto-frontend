@@ -10,10 +10,9 @@ import { useRef } from "react";
 const TeacherCourses = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
-  const [{__token}] = useCookies();
+  const [{ __token }] = useCookies();
   const [showAll, setShowAll] = useState(false);
   const [coursesCount, setCoursesCount] = useState(9);
-
 
   async function getTeacherCourses() {
     setCourses(await Course.getTeacherCourses(__token));
@@ -22,7 +21,6 @@ const TeacherCourses = () => {
   useEffect(() => {
     getTeacherCourses();
   }, []);
-
 
   return (
     <div className={styles.container}>
@@ -40,11 +38,12 @@ const TeacherCourses = () => {
       <div className={styles["parent"]}>
         {courses.length ? (
           <>
-            {
-              courses.filter((item, key) => {
-                return showAll || !showAll && key < coursesCount;
-              }).map((item, key) => {
-                return(
+            {courses
+              .filter((item, key) => {
+                return showAll || (!showAll && key < coursesCount);
+              })
+              .map((item, key) => {
+                return (
                   <StretchedCard
                     key={key}
                     id={item.id}
@@ -54,8 +53,7 @@ const TeacherCourses = () => {
                     }/${item.Images[0].path.replace(/tmp/, "")}`}
                   />
                 );
-              })
-            }
+              })}
           </>
         ) : (
           <Loading label="Carregando seus cursos" />
@@ -63,7 +61,7 @@ const TeacherCourses = () => {
       </div>
       {!showAll && courses.length > coursesCount && (
         <div className={styles.showmore}>
-            <span onClick={() => setShowAll(!showAll)}>Ver mais</span>
+          <span onClick={() => setShowAll(!showAll)}>Ver mais</span>
         </div>
       )}
     </div>

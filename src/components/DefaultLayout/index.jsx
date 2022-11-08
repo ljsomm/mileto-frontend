@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import LateralHeader from "../LateralHeader";
 import Modal from "../Modal";
+import Notification from "../Notification";
 import "./styles.css";
 
 const DefaultLayout = ({ children }) => {
@@ -42,6 +43,7 @@ const DefaultLayout = ({ children }) => {
         </>
       )}
       <Modal />
+      <Notification />
     </div>
   );
 };

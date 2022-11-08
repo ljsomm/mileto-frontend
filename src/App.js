@@ -2,7 +2,9 @@ import { CookiesProvider } from "react-cookie";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DefaultLayout from "./components/DefaultLayout";
 import { ModalProvider } from "./contexts/ModalContext";
+import { NotificationProvider } from "./contexts/NotificationContext";
 import { UserProvider } from "./contexts/UserContext";
+import { SectionProvider } from "./contexts/SectionContext";
 import routes from "./routes";
 import Private from "./routes/Private";
 import Public from "./routes/Public";
@@ -53,13 +55,15 @@ const App = () => {
     <BrowserRouter>
       <CookiesProvider>
         <UserProvider>
-          <ModalProvider>
-            <DefaultLayout>
-              <Routes>
-                {routes.map((route, key) => recursiveRoutes(route, key))}
-              </Routes>
-            </DefaultLayout>
-          </ModalProvider>
+          <NotificationProvider>
+              <ModalProvider>
+                <DefaultLayout>
+                  <Routes>
+                    {routes.map((route, key) => recursiveRoutes(route, key))}
+                  </Routes>
+                </DefaultLayout>
+              </ModalProvider>
+          </NotificationProvider>
         </UserProvider>
       </CookiesProvider>
     </BrowserRouter>
