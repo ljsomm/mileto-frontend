@@ -6,14 +6,15 @@
   align-items: center;
 
   .save{
-    background-color: red;
     width: 100%;
     display: flex;
     justify-content: end;
-
-    button{
-      @include dashboard-button;
-    }
+    div{
+      padding: 0 35px;
+      button{
+        @include dashboard-button;
+      }
+    } 
   }
 
   video {

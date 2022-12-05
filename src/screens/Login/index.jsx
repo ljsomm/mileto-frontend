@@ -21,7 +21,7 @@ const Login = ({ title }) => {
     email: "",
     password: "",
   });
-  const [cookies, setCookie] = useCookies();
+  const [, setCookie] = useCookies();
   const [error, setError] = useState("");
 
   useEffect(() => emailRef.current.focus(), []);

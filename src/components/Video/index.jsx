@@ -133,7 +133,9 @@ const Video = () => {
           { 
             video.toSave && 
             <div className={styles.save}>
-              <button>Salvar</button> 
+              <div>
+                <button>Salvar</button>
+              </div>
             </div>
           }
         </form> 

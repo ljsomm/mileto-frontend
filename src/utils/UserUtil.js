@@ -33,6 +33,18 @@ const UserUtil = {
   emailValidation: (email) => {
     return email.includes("@") && email.includes(".com");
   },
-};
+  grettings: (name = '') => {
+    let time = new Date().getHours();
+    return `${
+      time >= 0 && time < 12 ?
+      'Bom dia'
+      :
+      time >= 12 && time < 18 ?
+      'Boa tarde' 
+      :
+      'Boa noite'
+    }${name && `, ${name}`}!`; 
+  }
+};  
 
 export default UserUtil;

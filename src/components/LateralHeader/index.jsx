@@ -2,10 +2,20 @@ import styles from "./styles.module.scss";
 import Logo from "../../assets/images/logo-branca.png";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from '../../contexts/UserContext';
+import { useEffect } from "react";
+import User from "../../services/User";
 
 const LateralHeader = () => {
-  const [, , removeCookies] = useCookies();
+  const [{__token}, , removeCookies] = useCookies();
+  const { dispatch } = useContext(UserContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    User.get(__token, dispatch, true);
+  }, []);
+
   return (
     <header className={styles.menu}>
       <img src={Logo} alt="logo" className="header-logo" />
