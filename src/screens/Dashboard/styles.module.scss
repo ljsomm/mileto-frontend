@@ -10,6 +10,17 @@
   
       &:nth-child(1){
         width: 55%;
+        background-color: #415272;
+        display: flex;
+        align-items: center;
+
+        h2{
+          margin-bottom: 10px;
+        }
+
+        h2, p{
+          color: white;
+        }
       }
   
       &:nth-child(2){
@@ -29,7 +40,7 @@
   }
 
 
-  div{
+  .item{
     box-shadow: 2px 2px 10px #DFDFDF;
     background-color: #fff;
   }
