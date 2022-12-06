@@ -112,7 +112,7 @@ const CrudCourse = ({ title }) => {
               />
             </div>
             <div className={styles["nav-container"]}>
-              <button>Coninuar</button>
+              <button>Continuar</button>
             </div>
           </form>
         </div>

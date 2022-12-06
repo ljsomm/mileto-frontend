@@ -23,7 +23,7 @@ const LateralHeader = () => {
         <ul>
           <li onClick={() => navigate("/dashboard")}>Geral</li>
           <li onClick={() => navigate("/cursos-do-professor")}>Cursos</li>
-          <li onClick={() => navigate("/configuracoes")}>Configuracoes</li>
+          <li onClick={() => navigate("/configuracoes")}>Configurações</li>
           <li
             className={styles.exit}
             onClick={() => {
