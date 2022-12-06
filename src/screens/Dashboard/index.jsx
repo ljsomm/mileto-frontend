@@ -15,14 +15,17 @@ const Dashboard = ({ title }) => {
   return (
   <>
     <h1>{UserUtil.grettings(state.name)}</h1>
-    <div className={styles.grid}>
-      <div></div>
-      <div></div>
-      <div>1</div>
-      <div>2</div>
-      <div>2</div>
-      <div>2</div>
+    <div className={styles["flex-container"]}>
+      <div className={styles.item}></div>
+      <div className={styles.item}></div>
     </div>
+    <div className={styles["flex-container"]}>
+     <div className={styles.item}></div>
+     <div className={styles.item}></div>
+     <div className={styles.item}></div>
+     <div className={styles.item}></div>
+    </div>
+
   </>
   );
 };
