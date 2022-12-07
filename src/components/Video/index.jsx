@@ -24,7 +24,7 @@ const Video = () => {
       disableTitleInputState();
       setVideo({...video, toSave: false});
       console.log(video);
-      console.log(await Service.store(__token, video.sectionId, new FormData(ev.target)));
+      console.log(await Service.store(__token, video.sectionId, new FormData(ev.target), video.title));
     }
   }
 
