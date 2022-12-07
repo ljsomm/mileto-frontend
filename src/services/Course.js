@@ -92,6 +92,10 @@ const Course = {
     });
     return response;
   },
+  delete: async (token, id) => {
+    const response = await api.delete(`${process.env.REACT_APP_BACKEND}/course/${id}`, { headers: { token } });
+    return response;
+  }
 };
 
 export default Course;

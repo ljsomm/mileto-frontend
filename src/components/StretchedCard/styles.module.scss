@@ -1,3 +1,22 @@
+@use "../../styles" as *;
+
+.modal-footer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .modal-button{
+    @include dashboard-button;
+    &__cancel{
+      @include dashboard-button;
+      border-color:rgb(187, 14, 14);
+      color: rgb(187, 14, 14);
+      &:hover{
+        background-color: rgb(187, 14, 14);
+      }
+    }
+  }
+}
+
 .container {
   border: 1px solid rgb(146, 146, 146);
   padding: 10px;

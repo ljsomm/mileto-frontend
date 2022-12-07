@@ -13,6 +13,7 @@ const TeacherCourses = () => {
   const [{ __token }] = useCookies();
   const [showAll, setShowAll] = useState(false);
   const [coursesCount, setCoursesCount] = useState(9);
+  const [lastDeleted, setLastDeleted] = useState({});
 
   async function getTeacherCourses() {
     setCourses(await Course.getTeacherCourses(__token));
@@ -20,7 +21,7 @@ const TeacherCourses = () => {
 
   useEffect(() => {
     getTeacherCourses();
-  }, []);
+  }, [lastDeleted]);
 
   return (
     <div className={styles.container}>
@@ -48,6 +49,7 @@ const TeacherCourses = () => {
                     key={key}
                     id={item.id}
                     title={item.name}
+                    setLastDeleted={setLastDeleted}
                     image={`${
                       process.env.REACT_APP_BACKEND
                     }/${item.Images[0].path.replace(/tmp/, "")}`}
