@@ -1,6 +1,6 @@
 const CourseUtil = {
   thumbnailFilter: (src) => {
-    // src.replace(//)
+    return `${process.env.REACT_APP_BACKEND}/${src.replace(/(tmp\\|\.\/public\/)/, "")}`;
   }
 }
 

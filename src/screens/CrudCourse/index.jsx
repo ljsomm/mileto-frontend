@@ -4,9 +4,12 @@ import UploadIcon from "../../assets/icons/upload.svg";
 import { useState } from "react";
 import classNames from "classnames";
 import Course from "../../services/Course";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import CourseUtil from "../../utils/CourseUtil";
+import { Link } from "react-router-dom";
+import NotificationContext from "../../contexts/NotificationContext";
+import { useContext } from "react";
 
 const CrudCourse = ({ title }) => {
   const [cookies] = useCookies();
@@ -14,6 +17,7 @@ const CrudCourse = ({ title }) => {
   const [course, setCourse] = useState({});
   const courseId = useParams().id;
   const navigate = useNavigate();
+  const Notification = useContext(NotificationContext);
 
   async function getCourse(courseId) {
     const res = await Course.get(courseId);
@@ -40,11 +44,12 @@ const CrudCourse = ({ title }) => {
         cookies.__token,
         new FormData(ev.target)
       );
-      navigate(`${response.data.id}/secoes`, {
+      !courseId ? navigate(`${response.data.id}/secoes`, {
         state: {
           course: response.data,
         },
-      });
+      }) : Notification.dispatch({ payload: { title: "Curso editado com sucesso", closeButton: "true" } });
+
     } catch (err) {
       console.log(err);
     }
@@ -61,15 +66,15 @@ const CrudCourse = ({ title }) => {
             htmlFor="input-thumbnail"
           >
             <img
-              src={courseId && course.Images ? CourseUtil.thumbnailFilter(course.Images[0].path) : classNames({
+              src={!file && courseId && course.Images ? CourseUtil.thumbnailFilter(course.Images[0].path) : classNames({
                 [UploadIcon]: !file,
                 [file]: file,
               })}
               className={classNames({
-                [styles["setted-thumbnail"]]: file,
+                [styles["setted-thumbnail"]]: file || courseId && course.Images,
               })}
             />
-            {!file ? (
+            {!file && !(courseId && course.Images) ? (
               <span>Clique aqui para definir uma miniatura</span>
             ) : (
               <div className={styles["update-thumbnail"]}>Alterar imagem</div>
@@ -113,7 +118,8 @@ const CrudCourse = ({ title }) => {
               />
             </div>
             <div className={styles["nav-container"]}>
-              <button>Continuar</button>
+              <button>{ courseId ?  'Salvar' : 'Continuar' }</button>
+              { !!courseId && <Link state={{course, mode: 'edit'}} to={`secoes`}>Ver aulas</Link> }
             </div>
           </form>
         </div>
