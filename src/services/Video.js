@@ -52,8 +52,12 @@ const Video = {
     );
     return response.data;
   },
-  store: async (token, sectionId, formData) => {
-    const response = await api.post(`${process.env.REACT_APP_BACKEND}/section/${sectionId}/video`, formData, { headers: { token }, onUploadProgress: (ev) => {console.log(ev);} })
+  store: async (token, sectionId, formData, title, setUploadProgress) => {
+    console.log(formData.get('title'));
+    const response = await api.post(`${process.env.REACT_APP_BACKEND}/section/${sectionId}/video`, formData, { headers: { token, title }, onUploadProgress: (ev) => {setUploadProgress({
+      loaded: ev.loaded,
+      total: ev.total
+    });} })
     return response;
   }
 };

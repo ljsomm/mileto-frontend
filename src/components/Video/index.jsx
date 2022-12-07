@@ -8,23 +8,26 @@ import VideoContext from "../../contexts/SectionContext";
 import { VideoUtil } from "../../utils/VideoUtil";
 import Service from "../../services/Video";
 import { useCookies } from "react-cookie";
+import NotificationContext from '../../contexts/NotificationContext';
+
 const Video = () => {
   const titleRef = useRef(null);
   const videoRef = useRef(null);
   const [isTitleDisabled, setIsTitleDisabled] = useState(true);
   const [loadState, setLoadState] = useState({ loaded: 0, total: -1 });
+  const Notification = useContext(NotificationContext);
 
   const { state, dispatch } = useContext(VideoContext);
   const [ video, setVideo ] = useState({});
   const [{__token}] = useCookies();
+  const [uploadProgress, setUploadProgress] = useState({loaded: 0, total: 0});
 
   async function handleSubmit(ev) {
     ev.preventDefault();
     if(video.path){
       disableTitleInputState();
       setVideo({...video, toSave: false});
-      console.log(video);
-      console.log(await Service.store(__token, video.sectionId, new FormData(ev.target), video.title));
+      console.log(await Service.store(__token, video.sectionId, new FormData(ev.target), video.title, setUploadProgress));
     }
   }
 
@@ -44,6 +47,15 @@ const Video = () => {
       }
     })
   }, [state]);
+
+  useEffect(() => {
+      !!uploadProgress.total && uploadProgress.total === uploadProgress.loaded && Notification.dispatch({
+        payload: {
+          title: "Aula cadastrada com sucesso",
+          closeButton: true
+        }
+      });
+  }, [uploadProgress]);
 
   useEffect(() => {
     !isTitleDisabled && titleRef.current.focus();
@@ -137,6 +149,9 @@ const Video = () => {
                 <button>Salvar</button>
               </div>
             </div>
+          }
+          {
+            uploadProgress.total !== uploadProgress.loaded && <Progress max={uploadProgress.total} value={uploadProgress.loaded}/>
           }
         </form> 
         : 
