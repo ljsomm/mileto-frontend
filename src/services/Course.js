@@ -92,6 +92,11 @@ const Course = {
     });
     return response;
   },
+  update: async (token, id, formData) => {
+    const response = await api.put(`${process.env.REACT_APP_BACKEND}/course/${id}`, formData, { headers: { token } });
+    return response;
+
+  },
   delete: async (token, id) => {
     const response = await api.delete(`${process.env.REACT_APP_BACKEND}/course/${id}`, { headers: { token } });
     return response;

@@ -6,6 +6,7 @@ import classNames from "classnames";
 import Course from "../../services/Course";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import CourseUtil from "../../utils/CourseUtil";
 
 const CrudCourse = ({ title }) => {
   const [cookies] = useCookies();
@@ -35,7 +36,7 @@ const CrudCourse = ({ title }) => {
   async function handleSubmit(ev) {
     ev.preventDefault();
     try {
-      const response = await Course.create(
+      const response = courseId ? await Course.update(cookies.__token, courseId, new FormData(ev.target)) : await Course.create(
         cookies.__token,
         new FormData(ev.target)
       );
@@ -60,7 +61,7 @@ const CrudCourse = ({ title }) => {
             htmlFor="input-thumbnail"
           >
             <img
-              src={classNames({
+              src={courseId && course.Images ? CourseUtil.thumbnailFilter(course.Images[0].path) : classNames({
                 [UploadIcon]: !file,
                 [file]: file,
               })}

@@ -54,7 +54,7 @@ const Video = {
   },
   store: async (token, sectionId, formData, title, setUploadProgress) => {
     console.log(formData.get('title'));
-    const response = await api.post(`${process.env.REACT_APP_BACKEND}/section/${sectionId}/video`, formData, { headers: { token, title }, onUploadProgress: (ev) => {setUploadProgress({
+    const response = await api.post(`${process.env.REACT_APP_BACKEND}/section/${sectionId}/video`, formData, { headers: { token, title }, onUploadProgress: (ev) => {console.log(ev);setUploadProgress({
       loaded: ev.loaded,
       total: ev.total
     });} })
